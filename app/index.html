@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT INCLUDES -->
+    <script src="https://use.typekit.net/qpv3fxz.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- endbuild -->
+	<style type="text/css">
+	.chart-wraper{
+		float: left;
+		margin: 2px 2px 2px 34px;
+	}
+  .infotext {  }
+
+	#div_g .dygraph-label { font-family: Georgia,Verdana,serif; }
+
+	#div_g .dygraph-title { font-size: 36px; text-shadow: 2px 2px 2px gray; }
+
+	#div_g .dygraph-ylabel { font-size: 18px; text-shadow: -2px 2px 2px gray; }
+	
+	#div_g .dygraph-xlabel { font-size: 18px; text-shadow: -2px 2px 2px gray; }
+
+	.chart { border: 1px dashed black; margin: 5px 5px 5px 5px; padding: 2px; }
+  </style>
+  </head>
+  <body ng-app="dashboardApp">
+    <header>
+        <div id="primary">
+            <a href="#/"><img id="logo" src="img/socure-logo.png"/></a>
+            <nav>
+                <a class="main active" href="#/">System<br>Overview</a>
+                <a class="main" href="#/account_administration">Account<br>Administration</a>
+                <a class="main" href="manual-review.html">Manual<br>Review</a>
+                <a class="main" href="#/pss_upload">Pilot Self<br>Service</a>
+                <a class="main" href="#/usage">Usage</a>
+                <a class="main" href="settings.html">Dashboard<br>Settings</a>
+                <a class="main" href="support.html">Support</a>
+            </nav>
+            <a class="account" href=""><img src="img/user-icon.png"/>Account Name</a>
+        </div>
+    </header>
+
+    <div ng-view=""></div>
+
+	<footer>
+        <p>FOOTER</p>
+    </footer>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+		<script src="scripts/util.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+		<script src="scripts/controllers/account_administration.js"></script>
+		<script src="scripts/controllers/add_account.js"></script>
+		<script src="scripts/controllers/systemstatus.js"></script>
+		<script src="scripts/controllers/user_demographics.js"></script>
+		<script src="scripts/controllers/usage.js"></script>
+		<script src="scripts/controllers/PilotSelfServiceCtrl.js"></script>
+		<script src="scripts/controllers/pilot_self_service_2.js"></script>
+		<script src="scripts/controllers/pilot_self_service_3.js"></script>
+		<script src="scripts/controllers/pilot_self_service_4.js"></script>
+		<script src="scripts/controllers/pilot_self_service_5.js"></script>
+		<script src="scripts/dygraph-combined-dev.js"></script>
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+        <!-- endbuild -->
+
+</body>
+</html>
