@@ -32,7 +32,7 @@ angular.module('dashboardApp')
 		{
 		  rollPeriod: 7,
 		  showRoller: true,
-			  ylabel: 'Processing Time',
+			  ylabel: 'Transactions',
 			  xlabel: 'Date',
 			  labelsDivStyles: {
 				'text-align': 'right',
@@ -40,5 +40,6 @@ angular.module('dashboardApp')
 			  },
 			  strokeWidth: 1.8
 		}
-	  );	  
+	  );
+  
   });

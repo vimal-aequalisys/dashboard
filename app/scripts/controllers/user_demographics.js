@@ -23,36 +23,46 @@ angular.module('dashboardApp')
         var options = {
          // title: 'My Daily Activities',
           is3D: true,
+		  backgroundColor: '#49424F',
+		  legendTextStyle: { color: '#FFF' },
+		  titleTextStyle: { color: '#FFF' }
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('genderDistrChart'));
         chart.draw(data, options);
       }
-
-	//google.charts.load('current', {packages: ['corechart', 'bar']});
-	google.charts.setOnLoadCallback(drawBasic);
-
-	function drawBasic() {
-
-		  var data = new google.visualization.DataTable();
-		  data.addColumn('timeofday', 'Time of Day');
-		  data.addColumn('number', 'Motivation Level');
-
-		  data.addRows([
-			[[10,20], 1],
-			[[21,30], 2],
-			[[31,40], 3],
-			[[41,50], 4]
-		  ]);
-
-		  var options = {
-		//	title: 'Motivation Level Throughout the Day',
-			
-		  };
-
-		  var chart = new google.visualization.ColumnChart(
-			document.getElementById('ageDistrChart'));
-
-		  chart.draw(data, options);
-		}	   
+	
+	// Age Distribution chart
+    google.charts.setOnLoadCallback(drawAgeChart);
+    function drawAgeChart() {
+      var data = google.visualization.arrayToDataTable([
+        ['Age', 'Score', { role: 'style' } ],
+        ['<31', 8, 'color: #22B573'],
+        ['32-45', 10, 'color: #22B573'],
+        ['46-59', 19, 'color: #22B573'],
+        ['60-73', 21, 'color: #22B573'],
+		['74-115', 20, 'color: #22B573'],
+		['122+', 26, 'color: #22B573']
+      ]);
+      var options = {
+        bar: {groupWidth: '40%'},
+        legend: { position: 'none' },
+		titleTextStyle: { color: 'red'},
+		hAxis: {
+			title: 'Age Group',
+			textStyle: { color: 'white'},
+			titleTextStyle: { color: 'white'}
+        },
+        vAxis: {
+			title: 'Scores',
+			textStyle: { color: 'white'},
+			titleTextStyle: { color: 'white'}		  
+        },
+		backgroundColor: '#49424F',
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById('ageDistrChart'));
+      chart.draw(data, options);
+  }
+	
   });
+

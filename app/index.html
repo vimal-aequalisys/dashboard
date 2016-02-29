@@ -16,21 +16,33 @@
     <link rel="stylesheet" href="styles/styles.css">
     <!-- endbuild -->
 	<style type="text/css">
+	#section-functions.ng-scope a {
+		color: #fff;
+		text-decoration: none;
+	}
+	#section-functions.ng-scope a:hover{
+		color: #FAAF38;
+		text-decoration: underline;
+	}
 	.chart-wraper{
 		float: left;
 		margin: 2px 2px 2px 34px;
 	}
-  .infotext {  }
 
-	#div_g .dygraph-label { font-family: Georgia,Verdana,serif; }
+	#latencyChart .dygraph-label { font-family: Georgia,Verdana,serif;color: #fff; }
 
-	#div_g .dygraph-title { font-size: 36px; text-shadow: 2px 2px 2px gray; }
+	#latencyChart .dygraph-title { font-size: 36px; text-shadow: 2px 2px 2px gray; }
 
-	#div_g .dygraph-ylabel { font-size: 18px; text-shadow: -2px 2px 2px gray; }
+	#latencyChart .dygraph-ylabel { font-size: 14px; text-shadow: -2px 2px 2px gray; }
 	
-	#div_g .dygraph-xlabel { font-size: 18px; text-shadow: -2px 2px 2px gray; }
+	#latencyChart .dygraph-xlabel { font-size: 14px; text-shadow: -2px 2px 2px gray; }
 
-	.chart { border: 1px dashed black; margin: 5px 5px 5px 5px; padding: 2px; }
+	.chart { border: 1px dashed black; 
+			margin: 5px 5px 5px 5px; 
+			padding: 2px;
+			background-color: rgb(73, 66, 79);
+			color: #fff;
+	}
   </style>
   </head>
   <body ng-app="dashboardApp">
