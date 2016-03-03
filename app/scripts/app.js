@@ -17,6 +17,14 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
+  .constant('config', {
+    liveHost: 'https://admin.socure.com',
+    apiarayHost: 'http://private-c4f6c-testapis3.apiary-mock.com'
+  })
+  .run(function ($rootScope) {
+    $rootScope.liveHost= 'https://admin.socure.com';
+    $rootScope.apiarayHost= 'http://private-c4f6c-testapis3.apiary-mock.com';
+  })
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

@@ -3,289 +3,106 @@
 	<a href="#/">Product Status</a>
 </section>
 <section id="section-functions">
-        <form id="sort-clients">
-            <div class="form-node">
-                <label for="date-range">
-                    Date Range
-                </label>
-                <input type="date" name="date-range">
-                    
-                </input>
-            </div>
+  <form id="sort-clients">
+    <div class="form-node">
+      <label for="date-range">
+        SELECT RANGE
+      </label>
+      <input type="date" name=""/>
+    </div>
 
-            <div class="form-node">
-                <label for="client-select">Client</label>
-                <select name="client-select">
-                    <option value="client-1">client-1</option>
-                    <option value="client-2">client-2</option>
-                    <option value="client-3">client-3</option>
-                    <option value="client-4">client-4</option>
-                </select>
-            </div>
+    <div class="form-node time-set-range">
+      <label for="date-range">
+        SET RANGE
+      </label>
+                <span class="txt-field-block">
+									<input type="text" placeholder="mm/dd/yy" />
+									<span class="caleder-icon"></span>
+								</span>
+								<span class="txt-field-block">
+									<input type="text" placeholder="mm/dd/yy" />
+									<span class="caleder-icon"></span>
+								</span>
+    </div>
 
-            <div class="form-node">
-                <label for="sort-by">Sort By</label>
-                <select name="sort-by">
-                    <option value="vol">Volume</option>
-                    <option value="lat">Latency</option>
-                    <option value="err">Errors</option>
-                </select>
-            </div>
-        </form>
-        <form id="search-clients">
-            <div class="form-node right-align">
-                <label for="search">
-                    Search
-                </label>
-                <input type="text" name="search" value="enter search">
-                </input>
+    <div class="form-node">
+      <label for="client-select">Client</label>
+      <select name="client-select">
+        <option value="client-1">client-1</option>
+        <option value="client-2">client-2</option>
+        <option value="client-3">client-3</option>
+        <option value="client-4">client-4</option>
+      </select>
+    </div>
 
-                <button type="button">
-                    Search
-                </button>
-            </div>
-        </form>
-    </section>
+    <div class="form-node">
+      <label for="sort-by">Sort By</label>
+      <select name="sort-by">
+        <option value="vol">Volume</option>
+        <option value="lat">Latency</option>
+        <option value="err">Errors</option>
+      </select>
+    </div>
+  </form>
+  <form id="search-clients">
+    <div class="form-node right-align">
+      <label for="search">
+        Search
+      </label>
+      <input type="text" name="search" value="enter search">
+      </input>
 
-    <section id="main-content">
-        <table class="client-super-table">
-            <tr>
-                <th class="client-header">Clients</th>
-                <th>&nbsp;</th>
-                <th>Total<br/>Transaction</th>
-                <th>EmailAuthScore</th>
-                <th>AuthScore</th>
-                <th>KYC</th>
-                <th>OFAC</th>
-                <th>Percieve</th>
-                <th>Business<br/>Verification</th>
-                <th>Feedback</th>
-            </tr>
+      <button type="button">
+        Search
+      </button>
+    </div>
+  </form>
+</section>
 
-            <!-- DIVIDER -->
-                <tr>
-                    <td colspan="10" class="divider-cell"></td>
-                </tr>
-                <tr>
-                    <td colspan="10" class="divider-cell-spacer"></td>
-                </tr>
+<section id="main-content" class="cmn_wrapper">
+  <div class="tbl-white-bg"></div>
+  <table class="client-super-table">
+    <tr class="tbl-menu-bar">
+      <th class="client-header">CLIENTS</th>
+      <th>&nbsp;</th>
+      <th>Total<br/>Transaction</th>
+      <th>EmailAuthScore</th>
+      <th>AuthScore</th>
+      <th>KYC</th>
+      <th>OFAC</th>
+    </tr>
 
-        <!-- Start Client Row -->
-            <tr>
-                <td rowspan="3" class="client-cell all-clients-cell">All Clients</td>
-                    <td class="row-label">Vol</td>
-                        <td class="total yellow">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            <tr>
-                    <td class="row-label">Lat</td>
-                        <td class="total red">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            <tr>
-                    <td class="row-label">Err</td>
-                        <td class="total green">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
+    <!-- DIVIDER -->
+    <tr>
+      <td colspan="10" class="divider-cell-spacer"></td>
+    </tr>
 
-            <!-- DIVIDER -->
-                <tr>
-                    <td colspan="10" class="divider-cell"></td>
-                </tr>
-                <tr>
-                    <td colspan="10" class="divider-cell-spacer"></td>
-                </tr>
-        <!-- End Client Row -->
-            
-        <!-- Start Client Row -->
-            <tr>
-                <td rowspan="3" class="client-cell">Client 1</td>
-                    <td class="row-label">Vol</td>
-                        <td class="total red">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            <tr>
-                    <td class="row-label">Lat</td>
-                        <td class="total yellow">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            <tr>
-                    <td class="row-label">Err</td>
-                        <td class="total green">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            
-            <!-- DIVIDER -->
-                <tr>
-                    <td colspan="10" class="divider-cell"></td>
-                </tr>
-                <tr>
-                    <td colspan="10" class="divider-cell-spacer"></td>
-                </tr>
-        <!-- End Client Row -->
-            
-        <!-- Start Client Row -->
-            <tr>
-                <td rowspan="3" class="client-cell">Client 2</td>
-                    <td class="row-label">Vol</td>
-                        <td class="total red">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            <tr>
-                    <td class="row-label">Lat</td>
-                        <td class="total yellow">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            <tr>
-                    <td class="row-label">Err</td>
-                        <td class="total green">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            
-            <!-- DIVIDER -->
-                <tr>
-                    <td colspan="10" class="divider-cell"></td>
-                </tr>
-                <tr>
-                    <td colspan="10" class="divider-cell-spacer"></td>
-                </tr>
-        <!-- End Client Row -->
-            
-        <!-- Start Client Row -->
-            <tr>
-                <td rowspan="3" class="client-cell">Client 3</td>
-                    <td class="row-label">Vol</td>
-                        <td class="total red">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            <tr>
-                    <td class="row-label">Lat</td>
-                        <td class="total yellow">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            <tr>
-                    <td class="row-label">Err</td>
-                        <td class="total green">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            
-            <!-- DIVIDER -->
-                <tr>
-                    <td colspan="10" class="divider-cell"></td>
-                </tr>
-                <tr>
-                    <td colspan="10" class="divider-cell-spacer"></td>
-                </tr>
-        <!-- End Client Row -->
-            
-        <!-- Start Client Row -->
-            <tr>
-                <td rowspan="3" class="client-cell">Client 4</td>
-                    <td class="row-label">Vol</td>
-                        <td class="total red">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            <tr>
-                    <td class="row-label">Lat</td>
-                        <td class="total yellow">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-            <tr>
-                    <td class="row-label">Err</td>
-                        <td class="total green">XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-                        <td>XX,XXX,XXX</td>
-            </tr>
-        <!-- End Client Row -->
+    <!-- Start Client Row -->
+    <tr class="data_bgtd" ng-repeat-start="row in result">
+      <td rowspan="3" class="client-cell all-clients-cell" style="width: 16%;">{{ row.name }}</td>
+      <td class="row-label">Vol</td>
+      <td class="total green" ng-repeat="item in row.items">{{item.volume}}</td>
+    </tr>
+    <tr class="data_bgtd">
+      <td class="row-label">Lat</td>
+      <td class="total yellow" ng-repeat="item in row.items">{{item.latency}}</td>
+    </tr>
+    <tr class="data_bgtd">
+      <td class="row-label">Err</td>
+      <td class="total red" ng-repeat="item in row.items">{{item.error}}</td>
+    </tr>
 
-        </table>
-    </section>
+    <!-- DIVIDER -->
+    <tr>
+      <td colspan="10" class="divider-cell"></td>
+    </tr>
+    <tr ng-repeat-end>
+      <td colspan="10" class="divider-cell-spacer"></td>
+    </tr>
+    <!-- End Client Row -->
+
+  </table>
+  <div class="load-more-link">
+    <a href="javascript:void(0)">LOAD MORE</a>
+  </div>
+</section>

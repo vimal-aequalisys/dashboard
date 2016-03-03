@@ -3383,7 +3383,7 @@ Dygraph.prototype.createRollInterface_ = function() {
   this.roller_.value = this.rollPeriod_;
   for (var name in textAttr) {
     if (textAttr.hasOwnProperty(name)) {
-      this.roller_.style[name] = textAttr[name];
+    //  this.roller_.style[name] = textAttr[name];
     }
   }
 
