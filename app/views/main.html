@@ -27,20 +27,19 @@
 
     <div class="form-node">
       <label for="client-select">Client</label>
-      <select name="client-select">
-        <option value="client-1">client-1</option>
-        <option value="client-2">client-2</option>
-        <option value="client-3">client-3</option>
-        <option value="client-4">client-4</option>
+      <select name="client-select" ng-model="selectClient">
+        <option value="">Select Client</option>
+        <option ng-repeat="item in clients" value="{{item.id}}">{{item.name}}</option>
       </select>
     </div>
 
     <div class="form-node">
       <label for="sort-by">Sort By</label>
       <select name="sort-by">
-        <option value="vol">Volume</option>
-        <option value="lat">Latency</option>
-        <option value="err">Errors</option>
+        <option value="">Select</option>
+        <option value="vol" ng-click="order('products.totaltransaction.volume')">Volume</option>
+        <option value="lat" ng-click="order('products.totaltransaction.latency')">Latency</option>
+        <option value="err" ng-click="order('name')">Errors</option>
       </select>
     </div>
   </form>
@@ -49,7 +48,7 @@
       <label for="search">
         Search
       </label>
-      <input type="text" name="search" value="enter search">
+      <input type="text" name="search" ng-model="searchClient" placeholder="enter search">
       </input>
 
       <button type="button">
@@ -78,18 +77,18 @@
     </tr>
 
     <!-- Start Client Row -->
-    <tr class="data_bgtd" ng-repeat-start="row in result">
+    <tr class="data_bgtd" ng-repeat-start="row in result | limitTo:limit | filter:searchClient | filter:selectClient | orderBy:predicate:reverse ">
       <td rowspan="3" class="client-cell all-clients-cell" style="width: 16%;">{{ row.name }}</td>
       <td class="row-label">Vol</td>
-      <td class="total green" ng-repeat="item in row.items">{{item.volume}}</td>
+      <td class="total green" ng-repeat="item in row.products">{{item.volume}}</td>
     </tr>
     <tr class="data_bgtd">
       <td class="row-label">Lat</td>
-      <td class="total yellow" ng-repeat="item in row.items">{{item.latency}}</td>
+      <td class="total yellow" ng-repeat="item in row.products">{{item.latency}}</td>
     </tr>
     <tr class="data_bgtd">
       <td class="row-label">Err</td>
-      <td class="total red" ng-repeat="item in row.items">{{item.error}}</td>
+      <td class="total red" ng-repeat="item in row.products">{{item.error}}</td>
     </tr>
 
     <!-- DIVIDER -->
@@ -103,6 +102,6 @@
 
   </table>
   <div class="load-more-link">
-    <a href="javascript:void(0)">LOAD MORE</a>
+    <a href="javascript:void(0)" ng-click='loadMore()'>LOAD MORE</a>
   </div>
 </section>

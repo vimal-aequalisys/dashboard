@@ -1,6 +1,14 @@
 <section id="secondary">
-</section>
-<section id="section-functions">
+        <a href="">Product Status</a>
+        <div id="build">
+            <!--<a class="active" href="">Prod</a>-->
+            <a href="">STAGE</a>
+            <!--<a href="">DS</a>-->
+            <a href="">DEV</a>
+        </div>
+    </section>
+
+    <section id="section-functions">
         <form id="search-accounts">
             <div class="form-node">
                 <label for="search">
@@ -14,19 +22,19 @@
                 </button>
             </div>
         </form>
-        <a class="add-account" href="#/add_account"><img src="img/add-account-icon.png"/>ADD ACCOUNT</a>
+        <a class="add-account" href="add-new-account.html"><img src="img/add-account-icon.png"/>ADD ACCOUNT</a>
     </section>
 
-    <section id="main-content">
-
-        <h1>Edit account info</h1>
+    <section class="cmn_wrapper">
+				<div class="main-content">
+        <h1 class="mtop-40">Edit account info</h1>
         <h2>Click the gear icon to edit the content of a row</h2>
 
         <!-- ACCOUNT ADMIN FORM -->
 
             <!-- Note: each field needs a name value specific to THAT ACCOUNT, fields with the same names will cause errors -->
 
-        <form id="accounts-admin">
+        <form id="accounts-admin" class="mtop-20">
             <table class="account-admin-table">
                 <!-- HEADER -->
                 <tr>
@@ -46,189 +54,43 @@
                 <!-- END HEADER -->
 
                 <!-- ACCOUNT ROW -->
-                <tr class="account-row" id="account-1">
-                    <td class="edit-button-cell">
-                        <a class="edit-button"></a>
+                <tr class="account-row" ng-repeat-start="row in result" id="account-{{row.id}}" >
+                    <td class="td-col-arw">
+                        <a class="arrow-sprite default-dn-arw" ng-click="viewUsers(row.id);"></a>
                     </td>
                     <td>
-                        <input type="text" name="account-1-user" value="User name 1" disabled>
-                        </input>
+                        <input type="text" name="account-3-user" value="{{ row.name }}" disabled />
                     </td>
-                    <td>
-                        <input type="text" name="account-1-first-name" value="First name here" disabled>
-                        </input>
+                    <td colspan="10">
                     </td>
-                    <td>
-                        <input type="text" name="account-1-last-name" value="Last name here" disabled>
-                        </input>
-                    </td>
-                    <td>
-                        <input type="text" name="account-1-company" value="Socure" disabled>
-                        </input>
-                    </td>
-                    <td>
-                        <input type="text" name="account-1-contact-num" value="123-456-7890" disabled>
-                        </input>
-                    </td>
-                    <td>
-                        <input type="text" name="account-1-contact-email" value="username@mailserver.com" disabled>
-                        </input>
-                    </td>
-                    <td>
-                        <input type="text" name="account-1-api" value="123456abcd-123456" disabled>
-                        </input>
-                    </td>
-                    <td class="centered">
-                        <a class="roles-trigger">7 Roles</a>
-                        <!-- ROLES MODAL -->
-                            <div class="modal roles-modal">
-                                <a class="close-modal"><img src="img/close-icon.png"/></a>
-                                <div class="col-1">
-                                    <p><input type="checkbox" name="account-1-super-admin" value="super-admin" checked disabled> Super Admin</p>
-                                    <p><input type="checkbox" name="account-1-ssn-5" value="ssn-5" checked disabled> SSN 5</p>
-                                    <p><input type="checkbox" name="account-1-admin" value="admin" checked disabled> Admin</p>
-                                    <p><input type="checkbox" name="account-1-details" value="details" checked disabled> Details</p>
-                                </div>
-                                <div class="col-2">
-                                    <p><input type="checkbox" name="account-1-debug" value="debug" checked disabled> Debug</p>
-                                    <p><input type="checkbox" name="account-1-kyc" value="kyc" checked disabled> KYC</p>
-                                    <p><input type="checkbox" name="account-1-ofac" value="ofac" checked disabled> OFAC</p>
-                                    <p><input type="checkbox" name="account-1-delegated" value="delegated" checked disabled> Delegated</p>
-                                </div>
-                                <div class="col-3">
-                                    <p><em>Admin</em></p>
-                                    <p><input type="checkbox" name="account-1-reports" value="reports" checked disabled> Reports</p>
-                                    <p><input type="checkbox" name="account-1-settings" value="settings" checked disabled> Settings</p>
-                                    <p><input type="checkbox" name="account-1-developer" value="developer" checked disabled> Developer</p>
-                                </div>
-                                <div class="col-4">
-                                    <p><input type="checkbox" name="account-1-feedback" value="feedback" checked disabled> Feedback</p>
-                                    <p><input type="checkbox" name="account-1-training" value="training" checked disabled> Training</p>
-                                </div>
-                            </div>
-                        <!-- END ROLES MODAL -->
-                    </td>
-                    <td class="centered">
-                        <input type="checkbox" name="account-1-active" value="no" checked disabled> NO
-                    </td>
-                    <td class="centered">
-                        <input type="checkbox" name="account-1-locked" value="ses" checked disabled> YES
-                    </td>
-                    <td class="centered">
-                        <a>Reset</a>
-                    </td>
-                </tr>
-                <!-- END ACCOUNT ROW -->
 
-                <!-- ACCOUNT ROW -->
-                <tr class="account-row" id="account-2">
-                    <td class="edit-button-cell">
-                        <a class="edit-button"></a>
-                    </td>
-                    <td>
-                        <input type="text" name="account-2-user" value="User name 2" disabled>
-                        </input>
-                    </td>
-                    <td>
-                        <input type="text" name="account-2-first-name" value="First name here" disabled>
-                        </input>
-                    </td>
-                    <td>
-                        <input type="text" name="account-2-last-name" value="Last name here" disabled>
-                        </input>
-                    </td>
-                    <td>
-                        <input type="text" name="account-2-company" value="Socure" disabled>
-                        </input>
-                    </td>
-                    <td>
-                        <input type="text" name="account-2-contact-num" value="123-456-7890" disabled>
-                        </input>
-                    </td>
-                    <td>
-                        <input type="text" name="account-2-contact-email" value="username@mailserver.com" disabled>
-                        </input>
-                    </td>
-                    <td>
-                        <input type="text" name="account-2-api" value="123456abcd-123456" disabled>
-                        </input>
-                    </td>
-                    <td class="centered">
-                        <a class="roles-trigger">7 Roles</a>
-                        <!-- ROLES MODAL -->
-                            <div class="modal roles-modal">
-                                <a class="close-modal"><img src="img/close-icon.png"/></a>
-                                <div class="col-1">
-                                    <p><input type="checkbox" name="account-2-super-admin" value="super-admin" disabled> Super Admin</p>
-                                    <p><input type="checkbox" name="account-2-ssn-5" value="ssn-5" disabled> SSN 5</p>
-                                    <p><input type="checkbox" name="account-2-admin" value="admin" checked disabled> Admin</p>
-                                    <p><input type="checkbox" name="account-2-details" value="details" disabled> Details</p>
-                                </div>
-                                <div class="col-2">
-                                    <p><input type="checkbox" name="account-2-debug" value="debug" disabled> Debug</p>
-                                    <p><input type="checkbox" name="account-2-kyc" value="kyc" checked disabled> KYC</p>
-                                    <p><input type="checkbox" name="account-2-ofac" value="ofac" checked disabled> OFAC</p>
-                                    <p><input type="checkbox" name="account-2-delegated" value="delegated" checked disabled> Delegated</p>
-                                </div>
-                                <div class="col-3">
-                                    <p><em>Admin</em></p>
-                                    <p><input type="checkbox" name="account-2-reports" value="reports" checked disabled> Reports</p>
-                                    <p><input type="checkbox" name="account-2-settings" value="settings" disabled> Settings</p>
-                                    <p><input type="checkbox" name="account-2-developer" value="developer" checked disabled> Developer</p>
-                                </div>
-                                <div class="col-4">
-                                    <p><input type="checkbox" name="account-2-feedback" value="feedback" checked disabled> Feedback</p>
-                                    <p><input type="checkbox" name="account-2-training" value="training" disabled> Training</p>
-                                </div>
-                            </div>
-                        <!-- END ROLES MODAL -->
-                    </td>
-                    <td class="centered">
-                        <input type="checkbox" name="account-2-active" value="no" checked disabled> NO
-                    </td>
-                    <td class="centered">
-                        <input type="checkbox" name="account-2-locked" value="ses" checked disabled> YES
-                    </td>
-                    <td class="centered">
-                        <a>Reset</a>
-                    </td>
                 </tr>
-                <!-- END ACCOUNT ROW -->
-
-                <!-- ACCOUNT ROW -->
-                <tr class="account-row" id="account-3">
+								<tr class="account-row" ng-repeat="user in row.users" id="user-{{row.id}}-{{user.id}}" ng-repeat-end ng-show="showUsers-411">
                     <td class="edit-button-cell">
-                        <a class="edit-button"></a>
+                        <a class="edit-button" ng-click="enableEdit('user-'+row.id+'-'+user.id);" id="btn-user-{{row.id}}-{{user.id}}"></a>
                     </td>
                     <td>
-                        <input type="text" name="account-3-user" value="User name 3" disabled>
-                        </input>
+                        <input type="text" name="account-3-user" value="{{user.user}}" disabled />
                     </td>
                     <td>
-                        <input type="text" name="account-3-first-name" value="First name here" disabled>
-                        </input>
+                        <input type="text" name="account-3-first-name" value="{{user.firstName}}" disabled />
                     </td>
                     <td>
-                        <input type="text" name="account-3-last-name" value="Last name here" disabled>
-                        </input>
+                        <input type="text" name="account-3-last-name" value="{{user.lastName}}" disabled />
                     </td>
                     <td>
-                        <input type="text" name="account-3-company" value="Socure" disabled>
-                        </input>
+                        <input type="text" name="account-3-company" value="{{user.company}}" disabled />
                     </td>
                     <td>
-                        <input type="text" name="account-3-contact-num" value="123-456-7890" disabled>
-                        </input>
+                        <input type="text" name="account-3-contact-num" value="{{user.contact}}" disabled />
                     </td>
                     <td>
-                        <input type="text" name="account-3-contact-email" value="username@mailserver.com" disabled>
-                        </input>
+                        <input type="text" name="account-3-contact-email" value="{{user.apiKey}}" disabled />
                     </td>
                     <td>
-                        <input type="text" name="account-3-api" value="123456abcd-123456" disabled>
-                        </input>
+                        <input type="text" name="account-3-api" value="{{user.apiKey}}" disabled />
                     </td>
-                    <td class="centered">
+                    <td class="centered role">
                         <a class="roles-trigger">7 Roles</a>
                         <!-- ROLES MODAL -->
                             <div class="modal modal roles-modal">
@@ -258,24 +120,23 @@
                             </div>
                         <!-- END ROLES MODAL -->
                     </td>
-                    <td class="centered">
+                    <td class="centered check-radio-txt">
                         <input type="checkbox" name="account-3-active" value="no" checked disabled> NO
                     </td>
-                    <td class="centered">
+                    <td class="centered check-radio-txt">
                         <input type="checkbox" name="account-3-locked" value="ses" checked disabled> YES
                     </td>
                     <td class="centered">
                         <a>Reset</a>
                     </td>
                 </tr>
-                <!-- END ACCOUNT ROW -->
-                
+
+
             </table>
-            <input id="update-accounts" type="submit" value="UPDATE">
+            <div class="update-btn"><input id="update-accounts" type="submit" value="UPDATE" /></div>
+						<!--<div class="update-btn"><a href="javascript:void(0)" id="update-accounts" />UPDATE</a></div>-->
 
-        <form>
-
-        <div class="modal-bkg">
+       <div class="modal-bkg">
             &nbsp;
         </div>
     </section>
